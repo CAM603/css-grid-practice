@@ -170,9 +170,6 @@ p {
   font-size: 35px;
   background-color: #ffc600;
 }
-.item p {
-  margin: 0 0 5px 0;
-}
 .container1 {
   display: grid;
   grid-template-columns: 100px auto 100px;
@@ -206,4 +203,14 @@ p {
 .container4 .five {
   background: #BADA22;
   grid-row: span 2;
+}
+.container5 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+}
+.container5 .item.poop {
+  background: #BADA22;
+  grid-column-start: 1;
+  grid-column-end: -1;
 }
