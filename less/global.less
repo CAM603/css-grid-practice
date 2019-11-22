@@ -8,7 +8,8 @@ html {
 
 html, body {
     
-    background-color: white;
+    margin: 50px;
+    background-color: purple;
 }
 
 h1, h2, h3, h4, h5 {
@@ -17,6 +18,7 @@ h1, h2, h3, h4, h5 {
 
 h1 {
     font-size: 3rem;
+    line-height: 3;
 }
 
 h2 {
@@ -35,4 +37,18 @@ h4 {
 p {
     line-height: 1.5;
     font-size: 1rem;
+}
+
+.item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgba(0, 0, 0, 0.03);
+    border-radius: 3px;
+    font-size: 35px;
+    background-color: @yellow;
+
+    p {
+        margin: 0 0 5px 0;
+    }
 }

@@ -1,0 +1,70 @@
+// Level 1: Basics
+
+.container1 {
+    // Set display to grid
+    display: grid;
+
+    // Specify columns
+    grid-template-columns: 100px auto 100px;
+
+    // Specify rows
+    grid-template-rows: repeat(3, 50px); // 3 rows 50px high
+
+    // What extra rows will become
+    grid-auto-rows: 100px;
+    
+
+    //Specify gap
+    gap: 20px;
+}
+
+// Level 2: Grid-Auto-Flow
+.container2 {
+    display: grid;
+    gap: 20px;
+
+    
+    grid-template-columns: 200px 100px;
+
+    // With three items and only 2 specified columns, 3rd item will be a new row
+    // unless specified by grid-auto-flow: column;
+    grid-auto-flow: column;
+
+    // Now we can specify extra columns with grid-auto-columns
+    grid-auto-columns: 30px; 
+}
+
+// Level 3: Fractional Units and Repeat
+.container3 {
+    display: grid;
+    gap: 20px;
+    border: solid @yellow 5px;
+
+    // Repeats two columns that take up half of the REMAINING space
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+// Level 4: Sizing Grid Items
+.container4 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+
+    // Let's size an item inside the container
+    .one {
+        background: #BADA22;
+
+        // Span columns
+        grid-column: span 3;
+
+        //Span rows
+        grid-row: span 2;
+
+    }
+
+    .five {
+        background: #BADA22;
+        grid-row: span 2;
+    }
+}
