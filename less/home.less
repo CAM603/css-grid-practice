@@ -1,0 +1,148 @@
+// Level 1: Basics
+
+.container1 {
+    // Set display to grid
+    display: grid;
+
+    // Specify columns
+    grid-template-columns: 100px auto 100px;
+
+    // Specify rows
+    grid-template-rows: repeat(3, 50px); // 3 rows 50px high
+
+    // What extra rows will become
+    grid-auto-rows: 100px;
+    
+
+    //Specify gap
+    gap: 20px;
+}
+
+// Level 2: Grid-Auto-Flow
+.container2 {
+    display: grid;
+    gap: 20px;
+
+    
+    grid-template-columns: 200px 100px;
+
+    // With three items and only 2 specified columns, 3rd item will be a new row
+    // unless specified by grid-auto-flow: column;
+    grid-auto-flow: column;
+
+    // Now we can specify extra columns with grid-auto-columns
+    grid-auto-columns: 30px; 
+}
+
+// Level 3: Fractional Units and Repeat
+.container3 {
+    display: grid;
+    gap: 20px;
+    border: solid @yellow 5px;
+
+    // Repeats two columns that take up half of the REMAINING space
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+// Level 4: Sizing Grid Items
+.container4 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+
+    // Let's size an item inside the container
+    .one {
+        background: #BADA22;
+
+        // Span columns
+        grid-column: span 3;
+
+        //Span rows
+        grid-row: span 2;
+
+    }
+
+    .five {
+        background: #BADA22;
+        grid-row: span 2;
+    }
+}
+
+// Level 5: Placing Grid Items
+.container5 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 100px 100px 100px;
+
+    .item.poop {
+            background: #BADA22;
+    
+            // Start at the beginning of the  2nd track
+            //grid-column-start: 1;
+            
+            // End at the end
+            //grid-column-end: -1;
+            
+            //Shorthand (Less does not compile 1 / -1 without escaping
+            grid-column: ~"1/-1";
+        }
+}
+
+// Level 6: Auto fit and auto-fill
+.container6 {
+    display: grid;
+    gap: 20px;
+    border: solid @yellow 10px;
+
+    //Auto fill fills in as many coulumns as possible and gives extra space
+
+    //grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    
+    // Auto fit does the same and does not give extra space
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    .item.four {
+        background: #BADA22;
+        grid-column: ~"auto / -1";
+    }
+}
+
+// Level 7: Grid Template Areas 
+.container7 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: 150px 150px 100px;
+
+    // Grid template areas lets you name where you want to place items
+    grid-template-areas: 
+        'sidebar1 content sidebar2'
+        'sidebar1 content sidebar2'
+        'footer footer footer';
+
+        // Now we can tell items where to go with grid-area
+        .one {
+            grid-area: sidebar1;
+        }
+        .two {
+            grid-area: sidebar2;
+        }
+        .content {
+            grid-area: content;
+        }
+        .footer {
+            grid-area: footer;
+        }
+
+        // Medai Query Awesomeness...Just redefine where you want your items
+        @media(max-width: 600px) {
+            grid-template-areas: 
+            'content content sidebar1'
+            'content content sidebar2'
+            'footer footer footer';
+        }
+}
+
+
