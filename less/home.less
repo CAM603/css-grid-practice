@@ -145,4 +145,26 @@
         }
 }
 
+// Level 8: Grid auto-flow: dense
+.container8 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    // Toggle auto-flow :dense on and off an notice the difference
+    //grid-auto-flow: dense;
+
+    .item:nth-child(3n) {
+        background: dodgerblue;
+        grid-column: span 4;
+    }
+
+    .item:nth-child(5n) {
+        grid-column: span 2;
+        background: #BADA22;
+    }
+    .item:nth-child(2n) {
+        grid-row: span 2;
+        background: tomato;
+    }
+}
 
