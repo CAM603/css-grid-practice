@@ -168,3 +168,44 @@
     }
 }
 
+// level 9: centering items
+
+/*
+justify-items
+align-items
+
+justify-content
+align-content
+
+align-self
+justify-self
+
+justify = x axis (left and right)
+align = y axis (up and down)
+*/
+
+.container9 {
+    display: grid;
+    gap: 20px;
+    height: 500px;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+    border: solid @yellow 5px;
+
+    //shorthand for justify and align items
+    place-items: stretch stretch;
+
+    justify-content: center;
+    align-content: center;
+
+
+    .itm {
+        background: white;
+
+    }
+
+    .nine {
+        align-self: center;
+        justify-self: center;
+    }
+}
