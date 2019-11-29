@@ -209,3 +209,27 @@ align = y axis (up and down)
         justify-self: center;
     }
 }
+
+// Level 10: Re-ordering items 
+// Use order to change the order of items
+.container10 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(10, 1fr);
+
+    .content {
+        grid-column: ~"1 / -1";
+        order: 3;
+    }
+
+    .logo {
+        grid-column: span 2;
+        order: 2;
+    }
+    .nav {
+        grid-column: span 8;
+        order: 1;
+    }
+}
+
+
