@@ -2,7 +2,13 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        width: 100%;
+        text-align: center;
+    }
 
     .calculator {
         background: black;
@@ -24,6 +30,8 @@
         .screen {
             grid-area: screen;
             background: black;
+            color: rgb(151, 248, 4);
+            max-width: 250px;
         }
         .ac {
             grid-area: ac;

@@ -317,6 +317,12 @@ align = y axis (up and down)
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container h1 {
+  width: 100%;
+  text-align: center;
 }
 .container .calculator {
   background: black;
@@ -331,6 +337,8 @@ align = y axis (up and down)
 .container .calculator .screen {
   grid-area: screen;
   background: black;
+  color: #97f804;
+  max-width: 250px;
 }
 .container .calculator .ac {
   grid-area: ac;
