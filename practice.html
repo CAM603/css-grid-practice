@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practice</title>
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <section class="container">
+        <h1>Let's Make a Calculator!</h1>
+        <div class="calculator">
+            <div class="item screen"></div>
+            <div class="item ac">AC</div>
+            <div class="item pos_neg">+/-</div>
+            <div class="item percent">%</div>
+            <div class="item divide">/</div>
+            <div class="item number seven">7</div>
+            <div class="item number eight">8</div>
+            <div class="item number nine">9</div>
+            <div class="item multiply">*</div>
+            <div class="item number four">4</div>
+            <div class="item number five">5</div>
+            <div class="item number six">6</div>
+            <div class="item minus">-</div>
+            <div class="item number one">1</div>
+            <div class="item number two">2</div>
+            <div class="item number three">3</div>
+            <div class="item add">+</div>
+            <div class="item number zero">0</div>
+            <div class="item decimal">.</div>
+            <div class="item equals">=</div>
+        </div>
+
+    </section>
+    <script>
+        let numbers = document.querySelectorAll('.number');
+        let screen = document.querySelector('.screen');
+
+        // Show numbers on screen when clicked
+        numbers.forEach(el => el.addEventListener('click', (event) => {
+            screen.textContent = screen.textContent + event.target.textContent;
+        }));
+
+        // Show decimal if clicked
+        let decimal = document.querySelector('.decimal');
+        decimal.addEventListener('click', () => {
+            screen.textContent = screen.textContent + event.target.textContent;
+        });
+
+            let data = {
+            numberOne: 0,
+            numberTwo: 0,
+            action: ''
+        }
+        // Add numbers to data
+        let add = document.querySelector('.add');
+        add.addEventListener('click', (event) => {
+            data.numberOne = screen.textContent;
+            data.action = event.target.textContent;
+            return data;
+        });
+
+        console.log(data)
+
+        // Clear screen when clear is clicked
+        let clear = document.querySelector('.ac');
+        clear.addEventListener('click', () => screen.textContent = '');
+    </script>
+</body>
+</html>
