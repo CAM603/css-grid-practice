@@ -313,3 +313,73 @@ align = y axis (up and down)
   grid-column: span 8;
   order: 1;
 }
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container .calculator {
+  background: black;
+  display: grid;
+  gap: 5px;
+  border: solid #ffc600 5px;
+  padding: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas: 'screen screen screen screen' 'screen screen screen screen' 'ac posNeg percent divide' 'seven eight nine mult' 'four five six minus' 'one two three add' 'zero zero decimal equal';
+}
+.container .calculator .screen {
+  grid-area: screen;
+  background: black;
+}
+.container .calculator .ac {
+  grid-area: ac;
+}
+.container .calculator .pos_neg {
+  grid-area: posNeg;
+}
+.container .calculator .percent {
+  grid-area: percent;
+}
+.container .calculator .divide {
+  grid-area: divide;
+}
+.container .calculator .multiply {
+  grid-area: mult;
+}
+.container .calculator .minus {
+  grid-area: minus;
+}
+.container .calculator .add {
+  grid-area: add;
+}
+.container .calculator .equals {
+  grid-area: equal;
+}
+.container .calculator .seven {
+  grid-area: seven;
+}
+.container .calculator .eight {
+  grid-area: eight;
+}
+.container .calculator .nine {
+  grid-area: nine;
+}
+.container .calculator .four {
+  grid-area: four;
+}
+.container .calculator .five {
+  grid-area: five;
+}
+.container .calculator .six {
+  grid-area: six;
+}
+.container .calculator .one {
+  grid-area: one;
+}
+.container .calculator .two {
+  grid-area: two;
+}
+.container .calculator .zero {
+  grid-area: zero;
+}
